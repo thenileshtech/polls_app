@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+            <link rel="stylesheet" href={% static 'polls/style.css' %}>
+        <title>
+            Details of questions in poll app
+        </title>
+            <div class="box">
+                <h2>{{question.question_text}}</h2>
+                {%if error_message%}
+                    <p><strong>{{error_message}}</strong></p>
+                {%endif%}
+                <form  action="{%url 'polls:vote' question.id%}" method="POST">
+                    {%csrf_token%}
+                    <ul>
+                        {%for choice in question.choice_set.all%}
+                        <li>
+                            <span><input type="radio" name="choice" id="choice{{forloop.counter}}" value={{choice.id}}></span>
+                            <label for="choice{{forloop.counter}}">{{choice.choice_text}}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% comment %} <button class="button-85" role="button" type="submit">Vote</button> {% endcomment %}
+                    <button class="button-64" role="button" type="submit"><span class="text">VOTE</span></button>
+                    <a href="{% url 'polls:detail' question.id %}">
+                        <button class="button-65" role="button" type="button">
+                            <span class="text">CLEAR</span>
+                        </button>
+                        <!-- <input type="reset" value="Reset" onclick="alert('All data will be lost')"> -->
+                    </a>
+                </form>
+            </div>
+            <a class ="link" href="{% url 'polls:index' %}">Go Back</a>
+        </body>
+    </head>
+</html>
+

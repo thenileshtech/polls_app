@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title> RESULTS </title>
+    </head>
+    {% load static %}
+        <link rel="stylesheet" href={%static 'polls/style.css' %}>
+    <body>
+    <div class="box">
+        <h2>{{question.question_text}}</h2>
+        <ul>
+            {%for choice in question.choice_set.all%}
+                <li>
+                    <span></span>
+                    {{choice.choice_text}} --- {{choice.votes}} vote{{choice.votes|pluralize}}
+                </li>
+            {%endfor%}
+        <ul>
+    </div>
+    <a class="link" href="{% url 'polls:index'%}">Go to Home</a>
+        {% comment %} <h2> {{question.question_text}} </h2>
+        <div class="wrapper">
+            <ul>
+                {%for choice in question.choice_set.all%}
+                    <li>{{choice.choice_text}} --- {{choice.votes}} vote{{choice.votes|pluralize}}</li>
+                {%endfor%}
+            </ul>
+            <a href="{% url 'polls:index'%}">Go to Home</a>
+        </div> {% endcomment %}
+    </body>
+</html>

@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  body {
+    background: url("images/bg.png"), url("images/7740.png") no-repeat;
+    background-blend-mode: darken;
+    background-position: top;
+    background-size: 100%;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: #f6f6f6; */
+  }
+  .box {
+    width: 500px;
+    border-bottom: 20px solid #03a9f4;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .box h2 {
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .box ul {
+    position: relative;
+    background: #fff;
+  }
+  .box ul:hover li {
+    opacity: 0.2;
+  }
+  .box ul a li {
+    list-style: none;
+    padding: 10px 50px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
+  }
+  .box ul a li:hover {
+    transform: scale(1.1);
+    z-index: 5;
+    background: #25bcff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    opacity: 1;
+  }
+  .box ul a li span {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: #25bcff;
+    color: #fff;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    transform: translateY(-2px);
+  }
+  .box ul a li:hover span {
+    background: #fff;
+    color: #25bcff;
+  }
+  .box ul a {
+    text-decoration: none;
+    color: black;
+  }
+  .link {
+    padding: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    margin-top: 335px;
+    background: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-left: 8px
+  }
